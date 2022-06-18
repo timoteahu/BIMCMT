@@ -1,10 +1,13 @@
 import os 
-from waitress import serve
-from app.routes import init_app
+from flask import Flask, render_template, request, session, redirect, url_for
 
-app = init_app()
+app = Flask('app')
 
 app.secret_key = "1234235534534"
 
+@app.route("/")
+def index():
+    return render_template("/index.html")
+
 if __name__ == "__main__":
-    serve(app=app, host="0.0.0.0", port=8080)
+    app.run(debug=True)
