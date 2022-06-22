@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block main %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+
+<body class="mt-40">
+    {% include "navbar.html" %}
+
+    <div class="flex flex-col justify-center items-center">
+        <p class="text-5xl font-bold my-10">Our Mission</p>
+        <p class="text-l text-start max-w-5xl">The BIMCT aims to provide fun and exciting questions for participants. We hope to inspire more students to enjoy math and demonstrate that math is not only memorization but creativity. Many problems come with background information or stories that distinguish them from straight calculation or bash. Furthermore, we also aim to provide insight into how people can use mathematics in other STEM fields; some problems may include topics from different areas, but prior knowledge of those fields is not required.</p>
+
+        <p class="text-5xl font-bold my-10">Why Us?</p>
+        <p class="text-l text-start max-w-5xl">The BIMCT is meticulously crafted to contain fun yet challenging problems designed to prepare students for competitions like the AMCs and PuMAC. The BIMCT will challenge students of all ages to think beyond the school curriculum and utilize their creativity. Compared to other math tournaments, the BIMCT offers an exclusive opportunity for middle schoolers to experience and practice math competitions and elevate themselves to a higher level.</p>
+        
+        <p class="text-5xl font-bold my-10">Prizes</p>
+        <p class="text-l text-start max-w-5xl">Prizes will be awarded to the five highest-scoring individuals overall in each division, the five highest-scoring teams overall considering both team rounds in both divisions, and the Countdown Round winner. Ties between teams will not be broken. The overall team score will be the sum of all individual scores in the team plus the team round score.</p>
+        <p class="text-5xl font-bold my-10">Additional Info</p>
+        <p class="text-l text-start max-w-5xl">The BIMCT shares the same set of test questions but is divided into middle and high school divisions. An individuals’ division is determined by their current school year. Alongside the individual round, there will be several team tests. Teams are composed of no more than six members, and the team's division is determined by the team member in the highest grade.</p>
+
+    </div>
+</body>
+
+{% endblock %}

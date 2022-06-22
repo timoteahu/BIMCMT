@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block main %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+
+<body class="mt-40">
+    {% include "navbar.html" %}
+
+    <div class="flex flex-col justify-center items-center">
+        <p class="text-5xl font-bold underline mb-10 mt-10">Testing Information</p>
+        <div class="flex flex-col lg:flex-row justify-start items-start">
+            <div class="flex flex-col justify-center items-center max-w-xl text-center mx-10">
+                <p class="text-3xl font-bold underline mb-10">Individual Round</p>
+                <p class="text-xl mb-10">The Individual Round is <b>10 problems</b> and <b>60 minutes</b>. The test will contain problems ranging from AMC 8 to mid/late AIME. The Individual Round offers middle schoolers and high schoolers the opportunity to excel and includes high-quality problems created and tested by USAMO and USAJMO qualifiers. Each Individual Round question is worth the same amount of points.</p>
+            </div>
+            
+            <div class="flex flex-col justify-center items-center max-w-xl text-center  mx-10">
+                <p class="text-3xl font-bold underline mb-10">Team Round</p>
+                <p class="text-xl mb-10">The Team Round is <b>15 problems</b>, lasts <b>60 minutes</b>, and will be completed by teams of at most 6. The test will contain problems harder than the Individual Round, from Mid AMC 10 difficulty to late AIME difficulty or even early olympiad difficulty. Each problem is worth the same amount of points.</p>
+                
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row justify-start items-start">
+            <div class="flex flex-col justify-center items-center max-w-xl text-center mx-10">
+                <p class="text-3xl font-bold underline mb-10">Tiebreaker Round</p>
+                <p class="text-xl mb-10">Anyone who ties for a top 10 score in each division will participate in a Tiebreaker Round. The Tiebreaker test has <b>3 problems</b>, lasts <b>45 minutes</b>, and will challenge even the strongest competitors in the field. The problems range from mid-AIME difficulty to Olympiad difficulty. </p>
+            </div>
+            
+            <div class="flex flex-col justify-center items-center max-w-xl text-center  mx-10">
+                <p class="text-3xl font-bold underline mb-10">Countdown Round</p>
+                <p class="text-xl mb-10">The top 8 scorers in each division, after tiebreakers, will participate in the Countdown Round. The Countdown Round consists of short and easy problems that last <b>45 seconds</b> each. In every round, two players will compete to answer the question as quickly and accurately as possible; the first person to answer correctly gains a point. If no person answers the answer correctly, no points are awarded. In all rounds except the final, the first person to receive 2 points moves on. In the final round, the first person to receive 3 points will win the Countdown Round.</p>
+                
+            </div>
+        </div>
+        
+        <p class="text-3xl font-bold underline mb-10 mt-20">Rules</p>
+        <div class="flex flex-col justify-start items-start max-w-3xl">
+            <p>- For all tests, no computational devices, including but not limited to calculators, electronic devices, or abaci, are allowed. Similarly, graph paper and protractors are prohibited, but rulers and compasses are permitted. </p>
+            <p>- All answers except in the Countdown Round will be integer answers.</p>
+            <p>- If any student believes an answer is wrong, they can submit problem disputes through a form on the contest day. The deadline for problem disputes will similarly be announced.</p>
+            <p>- The entire exam will be conducted online over Zoom with a proctor in each Zoom room. All answers will be submitted through Google Forms.</p>
+            <p>- The Google Forms and Problem Set PDFs will be sent to the Zoom room on the contest day.</p>
+
+
+
+        </div>
+
+
+        
+    </div>
+
+</body>
+
+{% endblock %}

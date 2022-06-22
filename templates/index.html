@@ -1,14 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block main %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
 
-    <p> HELLO!</p>
-    
+<body class="mt-40">
+    {% include "navbar.html" %}
+
+    <div class="flex flex-col justify-center items-center">
+
+        <!-- Hero -->
+        <div class="flex flex-col w-3/4 justify-center items-center px-10 mx-10 my-20 text-center">
+            <p class="text-5xl learnont-bold my-10">Basis Independent Math Circle Tournament</p>
+            <p class="max-w-3xl text-xl">A high school led math competition to get students in the Silicon Valley to
+                compete and highlight the wonders of mathematics. </p>
+            <button class="sign text-xl my-14 bg-red-200 rounded p-4">Sign Up!</button>
+        </div>
+
+        <!-- Cards -->
+        <div class="flex flex-col justify-center items-center bg-red-300 w-full">
+            <section class="relative mb-10 p-20">
+
+                <div class="flex flex-col lg:flex-row">
+
+                    <!-- Card 1 -->
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg mb-10 sm:mr-10"
+                        style="background-color: white;">
+                        <img class="w-full " style="min-height: 200px; max-height: 256px;" src="../static/img/solveproblem.jpg" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">Solve Problems</div>
+                            <p class="text-gray-700 text-base">
+                                Solve unique and intricate problems to improve your mathematical and problem solving ability as well as solidifying your foundations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg mb-10 mr-10"
+                        style="background-color: white;">
+                        <img class="w-full" style="min-height: 200px; max-height: 256px;" src="../static/img/learn.jpg" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">Learn More</div>
+                            <p class="text-gray-700 text-base">
+                                Learn new ways to use your favorite mathematical thinking skills and formulas to solve innovative and complex problems created by our team!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg mb-10" style="background-color: white;">
+                        <img class="w-full" style="min-height: 200px; max-height: 256px;" src="../static/img/havefun.jpg" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">Have Fun</div>
+                            <p class="text-gray-700 text-base">
+                                Enjoy the problems! Fun and interesting problems are hard to come around, so enjoy the thrill of seeing these problems first-hand at our competition!
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <div class="flex flex-col justify-center items-center p-40">
+         <p class="text-4xl text-center mb-4">"Mathematics knows no races or geographic boundaries; for mathematics, the cultural world is one country."</p>
+         <p class="text-2xl text-center">-David Hilbert</p>
+
+        </div>
+
+        <div class="flex flex-col justify-center items-center bg-red-300 w-full">
+            <div class="flex flex-col lg:flex-row justify-center items-center mt-20 mb-10">
+                <div class="flex flex-col justify-center items-center ml-10 mr-20">
+                    <p class="text-4xl text-center mb-4">Learn the Right Way</p>
+                    <p class="text-xl text-center max-w-3xl mb-10">Learn and use various mathematical techniques and formulas to solve rigorous and challenging questions. Practice through past problems and learn the correct approaches to solve them for future encounters.</p>
+                    <button class="problem mb-10 rounded">More Problems</button>
+                </div>
+                
+                <img src="../static/img/sheep.jpg" class="mr-10 rounded" style="max-width: 540px;" alt="">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active")
+            navigation.classList.toggle("active")
+        });
+    </script>
 </body>
-</html>
+
+{% endblock %}
