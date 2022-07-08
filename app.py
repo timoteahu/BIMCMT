@@ -28,5 +28,10 @@ def current():
 @app.route("/people")
 def people():
     return render_template("people.html")
+
+@app.route("/signup")
+def signup():
+    return render_template("signup.html")
+    
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=1000, debug=True)
