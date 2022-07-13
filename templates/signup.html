@@ -21,7 +21,7 @@
 
 <body class="mt-40">
     {% include "navbar.html" %}
-
+    <!--kinda just made in a row, dunno if it works-->
     <div class="flex flex-row justify-center items-center mt-96 mb-96">
         <form id="myForm">
             <label>Full Name</label>
@@ -35,10 +35,13 @@
             <label>Age</label>
             <br />
             <input type="number" name="age" style="border: 1px solid black;">
+            <br />
             <label>Message</label>
+            <br />
             <textarea name="message" style="border: 1px solid black;">
             </textarea>
         </form>
+        <br />
         <button onclick="SubForm()">Submit</button>
     </div>
 
