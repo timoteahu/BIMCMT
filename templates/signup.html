@@ -1,16 +1,18 @@
 {% extends "layout.html" %}
 {% block main %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
 <script>
     function SubForm() {
         $.ajax({
-            url: 'https://api.apispreadsheets.com/data/p9a5bA8IiIgIZjzD/',
-            type: 'post',
+            url: "https://api.apispreadsheets.com/data/cwYLjZ7V5uhwsyKb/",
+            type: "post",
             data: $("#myForm").serializeArray(),
             success: function () {
-                document.location.reload(true);
+                console.log(data);
+                // document.location.reload(true);
             },
             error: function () {
                 alert("There was an error :(")
@@ -24,15 +26,32 @@
     <!--kinda just made in a row, dunno if it works-->
     <div class="flex flex-row justify-center items-center mt-96 mb-96">
         <form id="myForm">
-            <label>Full Name</label>
+            <div>
+                <label for="individual">Individual</label>
+                <input type="radio" id="individual" name="type" value="Individual" checked>
+
+                <label for="team">Team</label>
+                <input type="radio" id="team" name="type" value="Team">
+
+                
+            </div>
+            <label>name</label>
+            <input name="name" />
             <br />
-            <input name="name" style="border: 1px solid black;">
+            <label>grade</label>
+            <input name="grade" />
             <br />
-            <label>Email</label>
+            <label>division</label>
+            <input name="division" />
             <br />
-            <input name="email" style="border: 1px solid black;">
+            <label>email</label>
+            <input name="email" />
             <br />
-            <label>Age</label>
+            <label>team</label>
+            <input name="team" />
+            <br />
+            <label>id</label>
+            <input name="id" />
             <br />
             <input type="number" name="age" style="border: 1px solid black;">
             <br />
@@ -47,4 +66,19 @@
 
 </body>
 
+<script>
+    const indv = document.querySelector("#individual");
+    const team = document.querySelector("#team");
+
+    indv.addEventListener("click", () => {
+        console.log(indv.checked)
+        console.log(team.checked)
+    });
+
+    team.addEventListener("click", () => {
+        console.log(indv.checked)
+        console.log(team.checked)
+    });
+
+</script>
 {% endblock %}
