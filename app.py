@@ -3,8 +3,8 @@ from flask import Flask, render_template, request, session, redirect, url_for
 from flask_sslify import SSLify
 
 app = Flask('app')
-if 'DYNO' in os.environ: 
-    sslify = SSLify(app)
+# if 'DYNO' in os.environ: 
+#     sslify = SSLify(app)
 app.secret_key = "1234235534534"
 
 @app.route("/")
