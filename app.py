@@ -34,6 +34,12 @@ def people():
 @app.route("/signup")
 def signup():
     return render_template("signup.html")
+
+@app.route("/submit")
+def submit():
+    val = request.form.items
+    print(val)
+    return redirect("/signup")
     
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=1000, debug=True)

@@ -4,64 +4,74 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-<script>
-    function SubForm() {
-        $.ajax({
-            url: "https://api.apispreadsheets.com/data/cwYLjZ7V5uhwsyKb/",
-            type: "post",
-            data: $("#myForm").serializeArray(),
-            success: function () {
-                console.log(data);
-                // document.location.reload(true);
-            },
-            error: function () {
-                alert("There was an error :(")
-            }
-        });
-    }
-</script>
 
 <body class="mt-40">
     {% include "navbar.html" %}
     <!--kinda just made in a row, dunno if it works-->
     <div class="flex flex-row justify-center items-center mt-96 mb-96">
-        <form id="myForm">
-            <div>
-                <label for="individual">Individual</label>
-                <input type="radio" id="individual" name="type" value="Individual" checked>
+        <form action="/submit" id="myForm">
+            <div class="flex flex-rol justify-center items-center">
+                <label for="individual" class="mr-4">Individual</label>
+                <input type="radio" id="individual" name="type" value="Individual" class="active mr-4" checked>
 
-                <label for="team">Team</label>
-                <input type="radio" id="team" name="type" value="Team">
+                <label for="team" class="mr-4">Team</label>
+                <input type="radio" id="team" name="type" value="Team" class="mr-4">
 
-                
+
             </div>
-            <label>name</label>
-            <input name="name" />
-            <br />
-            <label>grade</label>
-            <input name="grade" />
-            <br />
-            <label>division</label>
-            <input name="division" />
-            <br />
-            <label>email</label>
-            <input name="email" />
-            <br />
-            <label>team</label>
-            <input name="team" />
-            <br />
-            <label>id</label>
-            <input name="id" />
-            <br />
-            <input type="number" name="age" style="border: 1px solid black;">
-            <br />
-            <label>Message</label>
-            <br />
-            <textarea name="message" style="border: 1px solid black;">
-            </textarea>
+            <!-- Individual -->
+            <div class="flex flex-col justify-center items-center individualButton active">
+                <label for="name">name</label>
+                <input type="text" name="name" id="name" class="mb-10" style="border: 2px black solid;">
+                <label for="grade">grade</label>
+                <input type="text" name="grade" id="grade" class="mb-10" style="border: 2px black solid;">
+                <label for="email">email</label>
+                <input type="email" name="email" id="email" class="mb-10" style="border: 2px black solid;">
+                <label for="division">division</label>
+                <div class="flex flex-row justify-center items-center mb-10">
+                    <label for="middle" class="mr-4">Middle School</label>
+                    <input type="radio" name="division" id="middle" class="mr-4" style="border: 2px black solid;">
+                    <label for="high" class="mr-4">High School</label>
+                    <input type="radio" name="division" id="high" class="mr-4" style="border: 2px black solid;">
+                </div>
+                <label for="division">Do you want to participate in the team round?</label>
+                <div class="flex flex-col justify-center items-center">
+                    <label for="yesTeam" class="mr-4">Yes, please assign me to a team</label>
+                    <input type="radio" name="teamDecision" id="yesTeam" class="mr-4" style="border: 2px black solid;">
+                    <label for="yesAlone" class="mr-4">Yes, I want to participate alone.</label>
+                    <input type="radio" name="teamDecision" id="yesAlone" class="mr-4" style="border: 2px black solid;">
+                    <label for="no" class="mr-4">No</label>
+                    <input type="radio" name="teamDecision" id="no" class="mr-4" style="border: 2px black solid;">
+                </div>
+            </div>
+
+            <!-- Team -->
+            <div class="flex flex-col justify-center items-center teamButton">
+                <label for="division">division</label>
+                <div class="flex flex-row justify-center items-center mb-10">
+                    <label for="middle" class="mr-4">Middle School</label>
+                    <input type="radio" name="division" id="middle" class="mr-4" style="border: 2px black solid;">
+                    <label for="high" class="mr-4">High School</label>
+                    <input type="radio" name="division" id="high" class="mr-4" style="border: 2px black solid;">
+                </div>
+
+                <div class="flex flex-col justify-center items-center mb-10">
+                    <p class="font-bold">Participant #1</p>
+                    <input type="text" name="name" id="name" class="mb-4" placeholder="name" style="border: 2px black solid;">
+                    <input type="text" name="grade" id="grade" class="mb-4" placeholder="grade" style="border: 2px black solid;">
+                    <input type="email" name="email" id="email" class="mb-4" placeholder="email" style="border: 2px black solid;">
+                </div>
+
+                <div class="flex flex-col justify-center items-center mb-10">
+                    <p class="font-bold">Participant #2</p>
+                    <input type="text" name="name" id="name" class="mb-4" placeholder="name" style="border: 2px black solid;">
+                    <input type="text" name="grade" id="grade" class="mb-4" placeholder="grade" style="border: 2px black solid;">
+                    <input type="email" name="email" id="email" class="mb-4" placeholder="email" style="border: 2px black solid;">
+                </div>
+            </div>
+            <input type="submit" value="submit">
         </form>
         <br />
-        <button onclick="SubForm()">Submit</button>
     </div>
 
 </body>
@@ -69,15 +79,21 @@
 <script>
     const indv = document.querySelector("#individual");
     const team = document.querySelector("#team");
+    const indvButton = document.querySelector(".individualButton");
+    const teamButton = document.querySelector(".teamButton");
 
     indv.addEventListener("click", () => {
-        console.log(indv.checked)
-        console.log(team.checked)
+        indv.classList.add("active");
+        team.classList.remove("active");
+        indvButton.classList.add("active");
+        teamButton.classList.remove("active");
     });
 
     team.addEventListener("click", () => {
-        console.log(indv.checked)
-        console.log(team.checked)
+        indv.classList.remove("active");
+        team.classList.add("active");
+        indvButton.classList.remove("active");
+        teamButton.classList.add("active");
     });
 
 </script>
