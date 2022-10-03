@@ -9,7 +9,7 @@ app.secret_key = "1234235534534"
 
 @app.route("/")
 def index():
-    return render_template("/index.html", page="Home Page - BIMCT")
+    return render_template("/index.html")
 
 @app.route("/mission")
 def mission():
