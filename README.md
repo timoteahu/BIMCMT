@@ -1,6 +1,6 @@
 # BIMCT
 
-**BIMCT (Building International Math Competition Team)** is a collaborative math competition initiative aimed at fostering a passion for mathematics and problem-solving. This project represents the organization and execution of a successful math competition, highlighting teamwork, creativity, and a commitment to mathematical excellence.
+**BIMCT (Basis Independent Math Circle Tournament)** is a collaborative math competition initiative aimed at fostering a passion for mathematics and problem-solving. This project represents the organization and execution of a successful math competition, highlighting teamwork, creativity, and a commitment to mathematical excellence.
 
 ## Overview
 
